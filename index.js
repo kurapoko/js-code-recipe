@@ -120,168 +120,196 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 // }
 
 // 配列.find
-const findArray = ['鈴木', '田中', '高橋', '後藤'];
-const targetFindArray = findArray.find((element) => element === '田中');
-console.log(targetFindArray);
+// const findArray = ['鈴木', '田中', '高橋', '後藤'];
+// const targetFindArray = findArray.find((element) => element === '田中');
+// console.log(targetFindArray);
 
-const findUserDataList = [
-  { id: 123, name: '高橋'},
-  { id: 1021, name: '鈴木'},
-  { id: 6021, name: '高橋'},
-];
+// const findUserDataList = [
+//   { id: 123, name: '高橋'},
+//   { id: 1021, name: '鈴木'},
+//   { id: 6021, name: '高橋'},
+// ];
 
-// ユーザーID
-const findUserSearchIdInput = document.querySelector("#search-id-input");
-const findUserSearchResult = document.querySelector("#search-result");
+// // ユーザーID
+// const findUserSearchIdInput = document.querySelector("#search-id-input");
+// const findUserSearchResult = document.querySelector("#search-result");
 
 
-findUserSearchIdInput.addEventListener('keyup', () => {
-  console.log(event.target.value);
-  const findUserSearchId = Number(event.target.value);
-  findUser(findUserSearchId);
-});
+// findUserSearchIdInput.addEventListener('keyup', () => {
+//   console.log(event.target.value);
+//   const findUserSearchId = Number(event.target.value);
+//   findUser(findUserSearchId);
+// });
 
-// ユーザーを探す
+// // ユーザーを探す
 
-function findUser(findUserSearchId) {
-  const targetData = findUserDataList.find((d) => d.id === findUserSearchId);
+// function findUser(findUserSearchId) {
+//   const targetData = findUserDataList.find((d) => d.id === findUserSearchId);
 
-  if (targetData == null) {
-    findUserSearchResult.textContent = '該当者なし';
-    return;
-  }
+//   if (targetData == null) {
+//     findUserSearchResult.textContent = '該当者なし';
+//     return;
+//   }
 
-  findUserSearchResult.textContent = targetData.name;
-}
+//   findUserSearchResult.textContent = targetData.name;
+// }
 
-// 配列を逆転
-const reverseArray = [1, 3, 5];
-reverseArray.reverse();
-console.log(reverseArray);
+// // 配列を逆転
+// const reverseArray = [1, 3, 5];
+// reverseArray.reverse();
+// console.log(reverseArray);
 
-// 配列をソート
-const sortArray = [1, 2, 3, 4, 5];
+// // 配列をソート
+// const sortArray = [1, 2, 3, 4, 5];
 
-sortArray.sort((a, b) => {
-  if (a < b) {
-    return 1;
-  }
+// sortArray.sort((a, b) => {
+//   if (a < b) {
+//     return 1;
+//   }
 
-  if (a === b) {
-    return 0;
-  }
+//   if (a === b) {
+//     return 0;
+//   }
 
-  if (a > b) {
-    return -1;
-  }
+//   if (a > b) {
+//     return -1;
+//   }
 
-});
+// });
 
-console.log(sortArray);
+// console.log(sortArray);
 
-// オブジェクトを含む配列をソート
-const userDataList = [
-  {id: 2, name: '鈴木'},
-  {id: 10, name: '田中'},
-  {id: 4, name: '鈴木'},
-  {id: 29, name: '高橋'},
-  {id: 101, name: '小笠原'},
-];
+// // オブジェクトを含む配列をソート
+// const userDataList = [
+//   {id: 2, name: '鈴木'},
+//   {id: 10, name: '田中'},
+//   {id: 4, name: '鈴木'},
+//   {id: 29, name: '高橋'},
+//   {id: 101, name: '小笠原'},
+// ];
 
-function updateList() {
-  let listHtml = '';
+// function updateList() {
+//   let listHtml = '';
 
-  for (const data of userDataList) {
-    listHtml += `
-    <li>${data.id} : ${data.name}</li>
-    `
-  }
+//   for (const data of userDataList) {
+//     listHtml += `
+//     <li>${data.id} : ${data.name}</li>
+//     `
+//   }
 
-  document.querySelector('.user_list').innerHTML = listHtml;
-}
+//   document.querySelector('.user_list').innerHTML = listHtml;
+// }
 
-function sortByAscending() {
-  userDataList.sort((a, b) => {
-    return a.id - b.id;
+// function sortByAscending() {
+//   userDataList.sort((a, b) => {
+//     return a.id - b.id;
+//   });
+
+//   updateList();
+// }
+
+// function sortByDescending() {
+//   userDataList.sort((a, b) => {
+//     return b.id - a.id;
+//   });
+
+//   updateList();
+// }
+
+// document.querySelector('.ascending').addEventListener('click', () => {
+//   sortByAscending();
+// });
+
+// document.querySelector('.descending').addEventListener('click', () => {
+//   sortByDescending();
+// });
+
+// sortByAscending();
+
+// // Map
+
+// const mapIdList = [4, 10, 20];
+// const mapUserIdList = mapIdList.map((value, index) => `userid_${value}`);
+// console.log(mapUserIdList);
+
+// const mapApiResponseData = [
+//   { id: 10, name: '鈴木'},
+//   { id: 21, name: '田中'},
+//   { id: 31, name: '高橋'},
+// ];
+
+
+// const mapIdList = mapApiResponseData.map((value) => value.id);
+// console.log(mapIdList);
+
+// // Filter
+// const filterArray = [10, 20, 30, 40, 50];
+// const newFilterArray = [10, 20, 30, 40].filter((value) => value >= 30);
+
+// console.log(newFilterArray);
+
+// const fillterUserDataList = [
+//   { age: 18, name: '鈴木'},
+//   { age: 27, name: '田中'},
+//   { age: 32, name: '佐藤'},
+//   { age: 41, name: '高橋'},
+//   { age: 56, name: '小笠原'},
+// ];
+
+// document.querySelectorAll('.button').forEach((element) => {
+//   element.addEventListener('click', (event) => {
+//     onClickButton(event);
+//   });
+// });
+
+// function onClickButton(event) {
+
+//   const button = event.target;
+
+//   const targetAge = button.dataset.age;
+
+//   const filterdList = fillterUserDataList.filter((data) => data.age >= targetAge);
+
+//   filterUpdateList(filterdList);
+// }
+
+// function filterUpdateList(filterdList) {
+
+//   let filterListHtml = '';
+
+//   for (const data of filterdList) {
+//     filterListHtml += `
+//       <li>${data.name} : ${data.age}歳</li>
+//     `;
+//   }
+
+//   document.querySelector('.user_filterList').innerHTML = filterListHtml;
+// }
+
+// const inputElement = document.querySelector('#myText');
+// inputElement.addEventListener('input', handleChange);
+
+// function handleChange() {
+//   const inputValue = event.target.value;
+
+//   document.querySelector('.log').innerHTML = inputValue;
+// }
+
+const element = document.querySelector('#myFile');
+const pEl = document.querySelector('.log');
+
+element.addEventListener('input', (e) => {
+  const target = event.target;
+
+  const files = target.files;
+
+  const file = files[0];
+
+  const reader = new FileReader();
+
+  reader.addEventListener('load', () => {
+    pEl.textContent = reader.result;
   });
 
-  updateList();
-}
-
-function sortByDescending() {
-  userDataList.sort((a, b) => {
-    return b.id - a.id;
-  });
-
-  updateList();
-}
-
-document.querySelector('.ascending').addEventListener('click', () => {
-  sortByAscending();
+  reader.readAsText(file);
 });
-
-document.querySelector('.descending').addEventListener('click', () => {
-  sortByDescending();
-});
-
-sortByAscending();
-
-// Map
-
-const mapIdList = [4, 10, 20];
-const mapUserIdList = mapIdList.map((value, index) => `userid_${value}`);
-console.log(mapUserIdList);
-
-const mapApiResponseData = [
-  { id: 10, name: '鈴木'},
-  { id: 21, name: '田中'},
-  { id: 31, name: '高橋'},
-];
-
-
-const mapIdList = mapApiResponseData.map((value) => value.id);
-console.log(mapIdList);
-
-// Filter
-const filterArray = [10, 20, 30, 40, 50];
-const newFilterArray = [10, 20, 30, 40].filter((value) => value >= 30);
-
-console.log(newFilterArray);
-
-const fillterUserDataList = [
-  { age: 18, name: '鈴木'},
-  { age: 27, name: '田中'},
-  { age: 32, name: '佐藤'},
-  { age: 41, name: '高橋'},
-  { age: 56, name: '小笠原'},
-];
-
-document.querySelectorAll('.button').forEach((element) => {
-  element.addEventListener('click', (event) => {
-    onClickButton(event);
-  });
-});
-
-function onClickButton(event) {
-
-  const button = event.target;
-
-  const targetAge = button.dataset.age;
-
-  const filterdList = fillterUserDataList.filter((data) => data.age >= targetAge);
-
-  filterUpdateList(filterdList);
-}
-
-function filterUpdateList(filterdList) {
-
-  let filterListHtml = '';
-
-  for (const data of filterdList) {
-    filterListHtml += `
-      <li>${data.name} : ${data.age}歳</li>
-    `;
-  }
-
-  document.querySelector('.user_filterList').innerHTML = filterListHtml;
-}
